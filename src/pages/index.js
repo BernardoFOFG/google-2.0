@@ -1,10 +1,24 @@
-import { Avatar } from "@/components/Avatar";
-import { MicrophoneIcon, ViewGridIcon } from '@heroicons/react/solid'
-import { SearchIcon } from '@heroicons/react/outline'
+import { MicrophoneIcon, ViewGridIcon } from '@heroicons/react/solid';
+import { SearchIcon } from '@heroicons/react/outline';
 import Image from "next/image";
 import { Footer } from "@/components/Footer";
+import { useRef } from "react";
+import { useRouter } from "next/router";
+import { Avatar } from '@/components/Avatar';
 
 export default function Home() {
+  const router = useRouter();
+  const searchInputRef = useRef(null);
+
+  const search = (e) => {
+    e.preventDefault();
+    const term = searchInputRef.current.value;
+
+    if (!term) return;
+
+    router.push(`/search?term=${term}`);
+  }
+
   return (
     <main className="flex flex-col items-center justify-center h-screen">
       <header className="flex w-full justify-between p-5 text-sm text-gray-700">
@@ -24,13 +38,13 @@ export default function Home() {
 
         <div className="flex justify-center items-center w-full max-w-md mt-5 px-5 py-3 border border-gray-200 rounded-full hover:shadow-lg focus-within:shadow-lg sm:max-w-xl lg:max-w-2xl">
           <SearchIcon className="h-5 mr-3 text-gray-500" />
-          <input type="text" className="focus:outline-none flex-grow" />
+          <input ref={searchInputRef} type="text" className="focus:outline-none flex-grow" />
           <MicrophoneIcon className="h-5" />
         </div>
 
-        <div className="flex flex-col w-1/2 space-y-2 justify-center mt-8 sn:space-y-0 sm:flex-row sm:space-x-4">
-          <button className="btn">Google Search</button>
-          <button className="btn">I'm Felling Lucky</button>
+        <div className="flex flex-col w-1/2 space-y-2 justify-center mt-8 sm:space-y-0 sm:flex-row sm:space-x-4">
+          <button onClick={search} className="btn">Google Search</button>
+          <button onClick={search} className="btn">I'm Feeling Lucky</button>
         </div>
       </form>
 
