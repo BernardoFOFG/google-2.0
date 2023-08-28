@@ -36,9 +36,9 @@ export default function Home() {
       <form className="flex flex-col items-center mt-32 flex-grow w-4/5">
         <Image src="https://www.google.co.uk/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" width={300} height={100} />
 
-        <div className="flex justify-center items-center w-full max-w-md mt-5 px-5 py-3 border border-gray-200 rounded-full hover:shadow-lg focus-within:shadow-lg sm:max-w-xl lg:max-w-2xl">
+        <div className="flex justify-center items-center w-full max-w-md mt-5 px-5 py-3 border border-gray-200 rounded-full hover:shadow-lg focus-within:shadow-lg sm:max-w-xl lg:max-w-2xl hover:transition-all transition-all">
           <SearchIcon className="h-5 mr-3 text-gray-500" />
-          <input ref={searchInputRef} type="text" className="focus:outline-none flex-grow" />
+          <input ref={searchInputRef} type="text" className="flex-grow w-full focus:outline-none h-6" />
           <MicrophoneIcon className="h-5" />
         </div>
 
