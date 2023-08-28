@@ -1,7 +1,6 @@
 import { PaginationButtons } from "./PaginationButtons"
 
 export const SearchResults = ({ results }) => {
-  console.log(results)
   return (
     <div className="mx-auto w-full px-3 sml:pl-[5%] md:pl-[14%] lg:pl-48">
       <p className="text-gray-600 text-md mb-5 mt-3">About

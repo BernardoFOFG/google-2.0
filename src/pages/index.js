@@ -27,8 +27,8 @@ export default function Home() {
           <p className="link">Store</p>
         </div>
         <div className="flex space-x-4 items-center">
-          <div className="link">Gmail</div>
-          <div className="link">Images</div>
+          <div className="link"><a href="https://www.gmail.com">Gmail</a></div>
+          <div className="link"><a href="https://photos.google.com/?pli=1">Images</a></div>
           <ViewGridIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-100 cursor-pointer" />
           <Avatar url='https://github.com/bernardofofg.png' />
         </div>
